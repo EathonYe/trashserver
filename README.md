@@ -1,0 +1,1 @@
+# The server of an application which is named trash.
