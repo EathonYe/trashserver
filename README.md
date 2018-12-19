@@ -1,1 +1,1 @@
-# The server of an application which is used to collect trash.
+# The server of an application which is used to collecting trash.

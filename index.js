@@ -1,16 +1,22 @@
-const Koa = require('koa'),
-      bodyparser = require('koa-bodyparser');
-const controller = require('./controller'),
-      config = require('./config');
+const Koa = require('koa')
 
-const HOST = config.HOST,
-      POST = config.PORT;
-const app = new Koa();
+const bodyparser = require('koa-bodyparser')
+
+const controller = require('./controllers')
+
+const config = require('./config')
+
+const HOST = config.HOST
+
+const POST = config.PORT
+
+const app = new Koa()
 
 // middlewares
-app.use(bodyparser());
-controller(app);
+app.use(bodyparser())
+
+controller(app)
 
 app.listen(POST, HOST, () => {
-  console.log(`Server running at http://${HOST}:${POST}`);
-});
+  console.log(`Server running at http://${HOST}:${POST}`)
+})
