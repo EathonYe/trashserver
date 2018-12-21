@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/EathonYe/trashserver#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "koa": "^2.5.2",
     "koa-bodyparser": "^4.2.1",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.4.0"
   },
   "devDependencies": {
     "eslint": "^5.10.0",
