@@ -9,6 +9,8 @@ module.exports = (app) => {
   router.post('/register', require('./login').register)
   router.post('/doLogin', require('./login').doLogin)
 
+  router.get('/trash', require('./trash').getTrash)
+
   app
     .use(router.routes()) // 添加路由中间件
     .use(router.allowedMethods()) // 对请求进行一些限制处理
