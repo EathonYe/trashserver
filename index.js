@@ -8,6 +8,8 @@ const controller = require('./controllers')
 
 const config = require('./config')
 
+const corsMiddleware = require('./middlewares/cors')
+
 const HOST = config.HOST
 
 const POST = config.PORT
@@ -23,6 +25,7 @@ mongoose.connect(config.mongodb.url, config.mongodb.options)
 const app = new Koa()
 
 // middlewares
+app.use(corsMiddleware)
 app.use(bodyparser())
 
 controller(app)
