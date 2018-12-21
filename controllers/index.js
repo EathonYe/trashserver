@@ -7,6 +7,7 @@ module.exports = (app) => {
   })
 
   router.post('/register', require('./login').register)
+  router.post('/doLogin', require('./login').doLogin)
 
   app
     .use(router.routes()) // 添加路由中间件

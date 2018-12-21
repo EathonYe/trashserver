@@ -23,11 +23,15 @@ exports.addUser = async ({ staffId, name, password, role }) => {
     }
 
     const result = await UserModel.create({
-      ...user,
-      password
+      ...user
     })
     return result
   } catch (err) {
     throw new Error('数据格式不合法或缺少必要参数')
   }
+}
+
+exports.find = async (params) => {
+  const result = await UserModel.find(params)
+  return result
 }
