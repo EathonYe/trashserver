@@ -20,6 +20,12 @@ const UserSchema = new Schema({
     type: Number,
     default: 2 // 1管理员；2普通用户
   },
+  phone: {
+    type: String
+  },
+  address: {
+    type: String
+  },
   meta: {
     createdAt: {
       type: Date,

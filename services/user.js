@@ -1,7 +1,7 @@
 const UserModel = require('../models/user')
 const bcrypt = require('bcryptjs')
 
-exports.addUser = async ({ staffId, name, password, role }) => {
+exports.addUser = async ({ staffId, name, password, role, ...rest }) => {
   try {
     // 生成salt
     const salt = await bcrypt.genSalt(10)
@@ -23,7 +23,8 @@ exports.addUser = async ({ staffId, name, password, role }) => {
     }
 
     const result = await UserModel.create({
-      ...user
+      ...user,
+      ...rest
     })
     return result
   } catch (err) {
