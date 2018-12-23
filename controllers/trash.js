@@ -2,11 +2,11 @@ const trashService = require('../services/trash')
 const userService = require('../services/user')
 
 exports.addTrash = async (ctx, next) => {
-  const { staffId, trashId } = ctx.request.body
+  const { staffId } = ctx.request.body
   const manager = await userService.find({ staffId })[0]
   if (manager) {
     const trash = await trashService.addTrash({
-      trashId,
+      ...ctx.request.body,
       manager: manager.staffId
     })
     return {
