@@ -4,6 +4,8 @@ const mongoose = require('mongoose')
 
 const bodyparser = require('koa-bodyparser')
 
+const koaStatic = require('koa-static')
+
 const controller = require('./controllers')
 
 const config = require('./config')
@@ -26,6 +28,7 @@ const app = new Koa()
 
 // middlewares
 app.use(corsMiddleware)
+app.use(koaStatic(config.upload.url))
 app.use(bodyparser())
 
 controller(app)
