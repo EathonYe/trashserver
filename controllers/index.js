@@ -13,6 +13,8 @@ module.exports = (app) => {
 
   router.post('/upload', require('./common').upload)
 
+  router.post('/resident', require('./resident').add)
+
   app
     .use(router.routes()) // 添加路由中间件
     .use(router.allowedMethods()) // 对请求进行一些限制处理
