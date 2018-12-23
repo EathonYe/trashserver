@@ -11,6 +11,8 @@ module.exports = (app) => {
 
   router.get('/trash', require('./trash').getTrash)
 
+  router.post('/upload', require('./common').upload)
+
   app
     .use(router.routes()) // 添加路由中间件
     .use(router.allowedMethods()) // 对请求进行一些限制处理
